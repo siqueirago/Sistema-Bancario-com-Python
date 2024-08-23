@@ -42,7 +42,7 @@ class Banco:
         if not self.extrato:
             print("Não foram realizadas movimentações.")
         else:
-            print("\n====== Extrato ======")
+            print("\n=========== Extrato ===========")
             for item in self.extrato:
                 print(item)
             print(f"\nSaldo atual: R$ {self.saldo:.2f}\n")
