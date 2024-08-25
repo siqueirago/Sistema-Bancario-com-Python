@@ -1,17 +1,17 @@
-
+from datetime import datetime
 
 class Banco:
     def __init__(self):
         self.saldo = 0.0  # Saldo inicial da conta
-        self.extrato = []  # Lista para armazenar transações1
+        self.extrato = []  # Lista para armazenar transações
         self.saques_diarios = 0  # Contador de saques diários
-        
 
     def depositar(self, valor):
         """Função para depositar um valor na conta."""
         if valor > 0:
             self.saldo += valor
-            self.extrato.append(f"Depósito: R$ {valor:.2f}")
+            data_hora = datetime.now().strftime('%d/%m/%Y %H:%M:%S')
+            self.extrato.append(f"{data_hora} - Depósito: R$ {valor:.2f}")
             print(f"Depósito de R$ {valor:.2f} realizado com sucesso!")
         else:
             print("Valor de depósito inválido. Tente novamente com um valor positivo.")
@@ -36,7 +36,8 @@ class Banco:
 
         # Realizar o saque
         self.saldo -= valor
-        self.extrato.append(f"Saque: R$ {valor:.2f}")
+        data_hora = datetime.now().strftime('%d/%m/%Y %H:%M:%S')
+        self.extrato.append(f"{data_hora} - Saque: R$ {valor:.2f}")
         self.saques_diarios += 1
         print(f"Saque de R$ {valor:.2f} realizado com sucesso!")
 
@@ -45,7 +46,7 @@ class Banco:
         if not self.extrato:
             print("Não foram realizadas movimentações.")
         else:
-            print("\n=========== Extrato ===========")
+            print("\nExtrato:")
             for item in self.extrato:
                 print(item)
             print(f"\nSaldo atual: R$ {self.saldo:.2f}\n")
