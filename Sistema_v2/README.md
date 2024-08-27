@@ -1,30 +1,27 @@
 # Criando um Sistema Bancário com Python
 ## Desafio
 
-Este projeto tem como objetivo desenvolver um sistema bancário simples utilizando a linguagem de programação Python. A proposta do sistema é modernizar as operações básicas de um banco. A versão inicial do sistema abrange três operações principais: depósito, saque e visualização de extrato. A simplicidade do projeto permite uma implementação direta, sem a necessidade de gerenciar múltiplas contas ou agências, focando apenas na lógica central dessas operações bancárias.
+Bem-vindo ao Sistema Bancário Otimizado desenvolvido em Python! Este projeto tem como objetivo modernizar as operações bancárias essenciais, oferecendo um sistema eficiente e fácil de usar para realizar transações financeiras básicas. A aplicação foi desenvolvida com foco na modularidade e na experiência do usuário, permitindo operações de depósito, saque, visualização de extrato, além da criação e gerenciamento de usuários e contas bancárias.
 ## Objetivo
-Criar um sistema bancário com as seguintes operações:
+Desenvolver um sistema bancário com as seguintes funcionalidades:
 
-* **1. Depositar**
-* **2. Sacar**
-* **3. Visualizar extrato**
-## Funcionalidades do Sistema
-* **Operação de depósito:**
-Deve ser possível depositar valores positivos para a minha conta bancária. A v1 do projeto trabalha apenas com 1 usuário, dessa forma não precisamos nos preocupar em identificar qual é o número da agência e conta bancária. Todos os depósitos devem ser armazenados em uma variável e exibidos na operação de extrato.
-* **Operação de saque:**
-O sistema deve permitir realizar 3 saques diários com limite máximo de R$ 500,00 por saque. Caso o usuário não tenha saldo em conta, o sistema deve exibir uma mensagem informando que não será possível sacar o dinheiro por falta de saldo. Todos os saques devem ser armazenados em uma variável e exibidos na operação de extrato.
-* **Operação de extrato:**
-Essa operação deve listar todos os depósitos e saques realizados na conta. No fim da listagem deve ser exibido o saldo atual da conta. Se o extrato estiver em branco, exibir a mensagem: Não foram realizadas movimentações.
-Os valores devem ser exibidos utilizando o formato R$ xxx.xx. Exemplo: 1500.45 = R$ 1500.45
-## Implementação do Menu Interativo
-Para tornar o sistema fácil de usar, um menu interativo foi implementado. Através deste menu, o usuário pode selecionar as operações desejadas (depositar, sacar, visualizar o extrato ou sair) de maneira intuitiva. A interação ocorre em um loop contínuo que só é interrompido quando o usuário escolhe a opção de sair do sistema.
+* **1. Depositar:** Permite que o usuário adicione fundos à sua conta. Apenas valores positivos são permitidos, e todas as transações são registradas para referência futura.
+
+* **2. Sacar:** Permite que o usuário retire fundos de sua conta, respeitando o limite diário de saques e o limite máximo por saque. O sistema assegura que o usuário tenha saldo suficiente antes de completar a transação.
+
+* **3. Extrato:** Exibe um extrato detalhado de todas as transações realizadas, incluindo depósitos e saques, bem como o saldo atual da conta.
+
+* **4. Nova Conta:** Possibilita a criação de uma nova conta bancária para usuários existentes, associando automaticamente o usuário à nova conta.
+
+* **5. Listar Contas:** Exibe todas as contas bancárias cadastradas no sistema, facilitando o gerenciamento e a visualização de contas.
+
+* **5. Novo Usuário:** Permite o cadastro de novos usuários no sistema, assegurando que cada CPF seja único e evitando duplicidade de registros.
+
+* **6. Sair:** Encerra o sistema de forma segura, garantindo que todas as operações sejam devidamente finalizadas.
 #### Como Usar:
-* **Depositar:** Escolha a opção "1" e insira o valor a ser depositado.
-* **Sacar:** Escolha a opção "2" e insira o valor a ser sacado.
-* **Visualizar Extrato:** Escolha a opção "3" para exibir o extrato da conta.
-* **Sair:** Escolha a opção "0" para encerrar o programa.
+Para utilizar o sistema, basta executar o script Python e seguir as instruções apresentadas no menu principal. O usuário pode navegar pelas opções disponíveis digitando o número correspondente à operação desejada. O sistema continuará funcionando até que o usuário opte por sair, selecionando a opção "Sair".
 ## Considerações  Finais
-A criação deste sistema bancário básico é um passo inicial importante para entender como funcionam as operações bancárias no mundo real e como elas podem ser automatizadas e otimizadas com o uso de tecnologia. O projeto também serve como um ponto de partida para futuros aprimoramentos e expansões, como a adição de múltiplos usuários, segurança avançada, e integração com sistemas externos.
+Este projeto demonstra a aplicação prática de conceitos fundamentais de programação para resolver problemas reais de negócios, proporcionando uma base sólida para o desenvolvimento de sistemas bancários mais complexos. Com sua arquitetura modular e código otimizado.
 ## Referencias
 [DIO-Digital Innnovation One](https://web.dio.me/track/engenharia-dados-python)
 
