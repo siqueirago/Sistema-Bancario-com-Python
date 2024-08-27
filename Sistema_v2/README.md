@@ -1,5 +1,5 @@
-# Criando um Sistema Bancário com Python
-## Desafio
+# Otimizando o Sistema Bancário com Python
+## Desafio- DIO
 
 Bem-vindo ao Sistema Bancário Otimizado desenvolvido em Python! Este projeto tem como objetivo modernizar as operações bancárias essenciais, oferecendo um sistema eficiente e fácil de usar para realizar transações financeiras básicas. A aplicação foi desenvolvida com foco na modularidade e na experiência do usuário, permitindo operações de depósito, saque, visualização de extrato, além da criação e gerenciamento de usuários e contas bancárias.
 ## Objetivo
