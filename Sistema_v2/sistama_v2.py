@@ -1,4 +1,5 @@
 from datetime import datetime
+import  textwrap
 
 # Constantes
 AGENCIA = "0001"
@@ -12,11 +13,9 @@ contas = []
 # Funções do sistema bancário
 
 def verificar_cpf(cpf):
-    """Verifica se o CPF já está cadastrado no sistema."""
     return any(usuario["cpf"] == cpf for usuario in usuarios)
 
 def criar_usuario():
-    """Cadastra um novo usuário no sistema."""
     cpf = input("Informe o CPF (somente números): ")
     
     if verificar_cpf(cpf):
@@ -32,7 +31,6 @@ def criar_usuario():
     print("Usuário cadastrado com sucesso!")
 
 def criar_conta():
-    """Cria uma nova conta bancária para um usuário existente."""
     cpf = input("Informe o CPF do usuário (somente números): ")
     usuario = localizar_usuario(cpf)
 
@@ -45,22 +43,25 @@ def criar_conta():
         print("Usuário não encontrado. Não é possível criar conta.")
 
 def localizar_usuario(cpf):
-    """Localiza um usuário pelo CPF."""
     for usuario in usuarios:
         if usuario["cpf"] == cpf:
             return usuario
     return None
 
 def listar_contas():
-    """Lista todas as contas bancárias cadastradas."""
     if contas:
         for conta in contas:
-            print(f"Agência: {conta['agencia']} - Conta: {conta['numero_conta']} - Usuário: {conta['usuario']['nome']}")
+            linha = f"""\
+                Agência: {conta['agencia']}
+                Conta: {conta['numero_conta']}
+                Titular:{conta['usuario']['nome']}
+            """
+            print("="* 80)
+            print(textwrap.dedent(linha))
     else:
-        print("Não há contas cadastradas.")
+        print("Não há contas cadastradas.")1
 
 def depositar(saldo, valor, /, extrato):
-    """Realiza um depósito na conta."""
     if valor > 0:
         saldo += valor
         extrato.append(f"{datetime.now().strftime('%d/%m/%Y %H:%M:%S')} - Depósito: R$ {valor:.2f}")
@@ -70,7 +71,6 @@ def depositar(saldo, valor, /, extrato):
     return saldo, extrato
 
 def sacar(*, saldo, valor, extrato, limite, numero_saques, limite_saques):
-    """Realiza um saque da conta."""
     if valor <= 0:
         print("Valor de saque inválido. Tente novamente com um valor positivo.")
     elif numero_saques >= limite_saques:
@@ -87,23 +87,21 @@ def sacar(*, saldo, valor, extrato, limite, numero_saques, limite_saques):
     return saldo, extrato, numero_saques
 
 def exibir_extrato(saldo, /, extrato):
-    """Exibe o extrato da conta com todas as transações."""
-    print("\nExtrato:")
+    print("\n================ Extrato ================")
     if not extrato:
         print("Não foram realizadas movimentações.")
     else:
         for transacao in extrato:
             print(transacao)
     print(f"\nSaldo atual: R$ {saldo:.2f}\n")
+    print("\n================ EXTRATO ================")
 
 def executar_deposito(saldo, extrato):
-    """Executa a função de depósito."""
     valor = float(input("Digite o valor para depósito: R$ "))
     saldo, extrato = depositar(saldo, valor, extrato)
     return saldo, extrato
 
 def executar_saque(saldo, extrato, numero_saques):
-    """Executa a função de saque."""
     valor = float(input("Digite o valor para saque: R$ "))
     saldo, extrato, numero_saques = sacar(
         saldo=saldo, valor=valor, extrato=extrato, 
@@ -113,7 +111,6 @@ def executar_saque(saldo, extrato, numero_saques):
     return saldo, extrato, numero_saques
 
 def executar_extrato(saldo, extrato):
-    """Executa a função de exibir extrato."""
     exibir_extrato(saldo, extrato)
 
 def main():
@@ -122,7 +119,7 @@ def main():
     numero_saques = 0
 
     while True:
-        print("\n--- Sistema Bancário ---")
+        print("\n========== MENU ==========")
         print("[1] Depositar")
         print("[2] Sacar")
         print("[3] Extrato")
