@@ -5,7 +5,7 @@ Projeto desenvolvido como parte de um desafio proposto pela equipe do Bootcamp N
 
 ## Objetivo
 Este projeto tem como objetivo modernizar as operações bancárias essenciais, oferecendo um sistema eficiente e fácil de usar para realizar transações financeiras básicas. A aplicação foi desenvolvida com foco na modularidade e na experiência do usuário, permitindo operações de depósito, saque, visualização de extrato, além da criação e gerenciamento de usuários e contas bancárias.
-Desenvolver um sistema bancário com as seguintes funcionalidades:
+## Funcionalidades
 
 * **1. Depositar:** Permite que o usuário adicione fundos à sua conta. Apenas valores positivos são permitidos, e todas as transações são registradas para referência futura.
 
